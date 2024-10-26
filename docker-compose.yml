@@ -1,0 +1,12 @@
+services:
+  webapi:
+    image: mcr.microsoft.com/dotnet/sdk:8.0 # Usa a imagem oficial do .NET SDK 8
+    working_dir: /app
+    volumes:
+      - ./:/app # Monta o diretório atual na pasta /app do contêiner
+    ports:
+      - "5000:5000" # Porta para acessar a aplicação (HTTP)
+    command: bash -c "dotnet restore && dotnet watch run --urls=http://0.0.0.0:5000"
+
+# docker compose run webapi dotnet new webapi -o .
+# docker compose up
