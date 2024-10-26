@@ -1,5 +1,6 @@
 services:
   webapi:
+    container_name: webapi
     image: mcr.microsoft.com/dotnet/sdk:8.0 # Usa a imagem oficial do .NET SDK 8
     working_dir: /app
     volumes:
